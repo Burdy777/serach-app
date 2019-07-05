@@ -1,0 +1,26 @@
+<div id="container">
+    <form [formGroup]="formGroup">
+      <mat-form-field class="form_mat_field">
+        <input matInput placeholder="titre" formControlName="originalTitle" required>
+        <mat-error>
+          3 caratères minimum 
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form_mat_field">
+          <input matInput placeholder="Année de création" formControlName="startYear" required>
+          <mat-error>
+            Format YYYY, example: 1972
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form_mat_field">
+            <input matInput placeholder="Nom du film" formControlName="genres" required>
+            <mat-error>
+              3 caratères minimum
+            </mat-error>
+          </mat-form-field>
+        </form>
+        <div class="button">
+            <button type="submit" mat-raised-button color="primary" (click)="save(formGroup.value)" [disabled]="formGroup.invalid">Sauvegarder</button>
+        </div>
+      </div>
+      
